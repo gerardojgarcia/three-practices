@@ -3,7 +3,7 @@ import * as THREE from 'three'
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1 , 1000)
 
-camera.position.set(0, 2, 20)
+camera.position.set(0, 1, 10)
 
 
 const renderer = new THREE.WebGLRenderer()
@@ -20,7 +20,7 @@ const material = new THREE.MeshBasicMaterial({
 
 })
 
-const light = new THREE.DirectionalLight( 0xffffbb,  1 );
+const light = new THREE.DirectionalLight( 0xffffff,  1 );
 light.position.set(0,1,0)
 light.castShadow = true
 scene.add( light );
@@ -34,6 +34,11 @@ light.shadow.camera.far = 500
 const sphere = new THREE.Mesh(geometry, material)
 sphere.castShadow = true
 scene.add(sphere)
+
+
+sphere.rotation.x = 1.9
+sphere.rotation.y= .5
+sphere.rotation.z = 2
 
 
 function animate(){
